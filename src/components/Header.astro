@@ -1,0 +1,32 @@
+---
+const navItems = [
+  { href: '/', label: 'Top' },
+  { href: '/about/', label: 'About' },
+  { href: '/service/', label: 'Service' },
+  { href: '/flow/', label: 'Flow' },
+  { href: '/works/', label: 'Works' },
+  { href: '/column/', label: 'Column' },
+  { href: '/contact/', label: 'Contact' },
+];
+---
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-logo" href="/" aria-label="きょうはじまる トップへ">
+      <span class="site-logo__main">きょうはじまる</span>
+      <span class="site-logo__sub">web support for small shops</span>
+    </a>
+    <details class="site-menu">
+      <summary class="menu-button" aria-label="メニューを開く">Menu</summary>
+      <nav class="drawer" aria-label="サイト内メニュー">
+        <div class="container">
+          <ul class="nav-list">
+            {navItems.map((item) => (
+              <li><a href={item.href}>{item.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+    </details>
+  </div>
+</header>

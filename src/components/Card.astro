@@ -1,0 +1,25 @@
+---
+interface Props {
+  title: string;
+  text?: string;
+  href?: string;
+  date?: string;
+  category?: string;
+  number?: string;
+  class?: string;
+}
+
+const { title, text, href, date, category, number, class: className } = Astro.props;
+const Tag = href ? 'a' : 'article';
+---
+
+<Tag class:list={['card', className]} href={href} data-number={number}>
+  {(date || category) && (
+    <div class="card__meta">
+      {date && <time datetime={date}>{date}</time>}
+      {category && <span class="tag">{category}</span>}
+    </div>
+  )}
+  <h3 class="card__title">{title}</h3>
+  {text && <p class="card__text">{text}</p>}
+</Tag>

@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/Button.astro';
+import Card from '../../components/Card.astro';
+import SectionTitle from '../../components/SectionTitle.astro';
+---
+
+<BaseLayout title="きょうはじまるについて" description="きょうはじまるは、個人サロンや小さなお店のWebまわりを相談から整えるサポートです。">
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-title__eyebrow">About</span>
+      <h1>小さくても、ちゃんと届くWebへ。</h1>
+      <p class="lead">きょうはじまるは、個人サロンや小規模事業者のためのWeb相談・制作サポートです。制作会社に頼むほどではないけれど、ひとりで考えるには少し難しい。そんなWebまわりを一緒に整理します。</p>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <SectionTitle eyebrow="Mind" title="大切にしていること" />
+      <div class="stack">
+        <Card title="今あるものを活かす" text="すぐに全部を作り替えるのではなく、今ある発信や言葉のよいところを見つけます。" />
+        <Card title="続けられる形にする" text="運用が重くならないように、必要なものから小さく整えていきます。" />
+        <Card title="やさしく言葉にする" text="専門用語に寄せすぎず、お客さまに伝わる自然な言葉を一緒に選びます。" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta">
+        <p class="cta__copy">まずは、今の状態を聞かせてください。</p>
+        <p class="lead">まとまっていない相談から始められます。</p>
+        <div class="cta__action"><Button href="/contact/" variant="secondary">相談する</Button></div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

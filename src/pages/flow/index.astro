@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/Button.astro';
+import SectionTitle from '../../components/SectionTitle.astro';
+---
+
+<BaseLayout title="相談の流れ">
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-title__eyebrow">Flow</span>
+      <h1>話すところから、形にするところまで。</h1>
+      <p class="lead">最初の相談で無理に制作内容を決める必要はありません。今の課題を整理し、必要な順番を一緒に見つけます。</p>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <SectionTitle eyebrow="Steps" title="進め方" />
+      <div class="flow-list">
+        <div class="flow-item"><span>STEP 01</span><h3>相談</h3><p class="card__text">お問い合わせ後、現在のWebまわりや困りごとをお聞きします。</p></div>
+        <div class="flow-item"><span>STEP 02</span><h3>整理</h3><p class="card__text">目的、届けたい相手、必要なページや導線を整理します。</p></div>
+        <div class="flow-item"><span>STEP 03</span><h3>提案</h3><p class="card__text">優先順位、制作範囲、進め方をご提案します。</p></div>
+        <div class="flow-item"><span>STEP 04</span><h3>制作・運用</h3><p class="card__text">必要に応じて、サイト制作やSNS・LINE導線の整備に進みます。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta">
+        <p class="cta__copy">小さな相談から始められます。</p>
+        <p class="lead">まだ依頼内容が決まっていない段階でもご相談ください。</p>
+        <div class="cta__action"><Button href="/contact/" variant="secondary">問い合わせる</Button></div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

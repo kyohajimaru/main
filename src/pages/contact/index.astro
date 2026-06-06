@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/Button.astro';
+import Card from '../../components/Card.astro';
+import SectionTitle from '../../components/SectionTitle.astro';
+---
+
+<BaseLayout title="お問い合わせ">
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-title__eyebrow">Contact</span>
+      <h1>まずは話して、整えるところから。</h1>
+      <p class="lead">ホームページ制作、SNS、LINE導線、今あるサイトの見直しなど、内容が固まっていない段階でもご相談ください。</p>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <SectionTitle eyebrow="Contact" title="お問い合わせ方法" />
+      <div class="stack">
+        <Card title="初回相談" text="今の状況、困っていること、やってみたいことをお聞きします。" />
+        <div class="form-note">
+          <p class="lead">フォームや外部予約ページは今後接続予定です。公開時はこのエリアに問い合わせフォーム、メールリンク、またはLINE相談導線を設置できます。</p>
+        </div>
+        <Button href="mailto:hello@example.com">メールで相談する</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

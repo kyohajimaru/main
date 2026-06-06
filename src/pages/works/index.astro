@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+import SectionTitle from '../../components/SectionTitle.astro';
+---
+
+<BaseLayout title="制作・相談事例">
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-title__eyebrow">Works</span>
+      <h1>制作と相談の事例。</h1>
+      <p class="lead">実績掲載の準備中です。公開前のため、想定される相談内容の例を掲載しています。</p>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <SectionTitle eyebrow="Cases" title="こんな相談に対応します" />
+      <div class="stack">
+        <Card title="サロンサイトの情報整理" category="ホームページ" text="メニュー、プロフィール、予約導線をスマホで見やすい順番に整える相談。" />
+        <Card title="Instagramから予約までの導線改善" category="SNS" text="プロフィール、ハイライト、リンク先を見直し、迷わず予約へ進める形に改善。" />
+        <Card title="LINE公式アカウントの初期設計" category="LINE" text="リッチメニュー、あいさつメッセージ、予約リンクを整えるサポート。" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

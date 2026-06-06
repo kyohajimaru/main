@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+import SectionTitle from '../../components/SectionTitle.astro';
+
+const columns = (await getCollection('column'))
+  .filter((entry) => !entry.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const formatDate = (date: Date) =>
+  date.toISOString().slice(0, 10);
+---
+
+<BaseLayout title="コラム一覧">
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-title__eyebrow">Column</span>
+      <h1>Webまわりの小さなヒント。</h1>
+      <p class="lead">ホームページ、SNS、LINE導線づくりの考え方を短くまとめています。</p>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <SectionTitle eyebrow="Articles" title="コラム一覧" />
+      <div class="stack">
+        {columns.map((entry) => (
+          <Card
+            title={entry.data.title}
+            text={entry.data.description}
+            date={formatDate(entry.data.date)}
+            category={entry.data.category}
+            href={`/column/${entry.slug}/`}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,107 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import Card from '../components/Card.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import heroImage from '../../assets/img/photo1.jpg';
+
+const columns = (await getCollection('column'))
+  .filter((entry) => !entry.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const formatDate = (date: Date) =>
+  date.toISOString().slice(0, 10);
+
+const services = [
+  ['01', 'Webまわりの相談', 'やりたいこと、困っていること、今ある発信を一緒に見ながら整理します。'],
+  ['02', 'ホームページ制作', '小さなお店らしさが伝わる、軽くて見やすいサイトを制作します。'],
+  ['03', 'SNS運用サポート', 'プロフィール、投稿テーマ、導線づくりを無理なく続く形に整えます。'],
+  ['04', 'LINE導線づくり', '予約・相談・案内につながるLINE公式アカウントの設計を支援します。'],
+  ['05', '小さな改善・更新サポート', '文章変更、画像差し替え、導線改善など、日々の見直しにも対応します。'],
+];
+
+const info = [
+  { date: '2026-06-05', category: 'お知らせ', title: 'きょうはじまるのWebサイトを準備中です。' },
+  { date: '2026-06-01', category: '相談', title: '初回相談では今の課題整理から始めます。' },
+];
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div class="hero__image">
+      <img src={heroImage.src} alt="木漏れ日が広がる緑の木々" width={heroImage.width} height={heroImage.height} />
+    </div>
+    <div class="container hero__content">
+      <span class="hero__label">small shop web partner</span>
+      <h1>小さなお店の「やりたい」を、<br />今日から形に。</h1>
+      <p>Webサイト、SNS、LINE導線づくりまで。ひとりで悩みがちなWebまわりを、やさしく整理します。</p>
+      <Button href="/contact/">まずは相談してみる</Button>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="concept-copy">相談して、<br />整えて、<br />はじめてみる。</p>
+      <p class="lead">大きな制作の前に、今ある言葉や発信をほどいて、必要なものを一緒に見つけます。小さく始めて、続けられるWebの形へ。</p>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <SectionTitle eyebrow="Information" title="お知らせ" />
+      <div class="stack">
+        {info.map((item) => <Card {...item} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionTitle eyebrow="Service" title="できること" />
+      <div class="stack">
+        {services.map(([number, title, text]) => <Card title={title} text={text} number={number} class="service-card" />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <SectionTitle eyebrow="Flow" title="相談の流れ" />
+      <div class="flow-list">
+        <div class="flow-item"><span>STEP 01</span><h3>相談</h3><p class="card__text">今の状況や気になっていることを、まとまっていない段階からお聞きします。</p></div>
+        <div class="flow-item"><span>STEP 02</span><h3>整理</h3><p class="card__text">目的、お客さま、必要な導線、優先順位を見える形にします。</p></div>
+        <div class="flow-item"><span>STEP 03</span><h3>提案</h3><p class="card__text">今すぐ必要なことと、後からでよいことを分けてご提案します。</p></div>
+        <div class="flow-item"><span>STEP 04</span><h3>必要に応じて制作・運用</h3><p class="card__text">ホームページ制作、SNS整理、LINE導線などを小さく進めます。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionTitle eyebrow="Column" title="Webまわりの小さなヒント" />
+      <div class="stack">
+        {columns.map((entry) => (
+          <Card
+            title={entry.data.title}
+            text={entry.data.description}
+            date={formatDate(entry.data.date)}
+            category={entry.data.category}
+            href={`/column/${entry.slug}/`}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta">
+        <p class="cta__copy">まだふわっとした段階でも大丈夫です。</p>
+        <p class="lead">「何から整えたらいいか」から一緒に考えます。</p>
+        <div class="cta__action"><Button href="/contact/" variant="secondary">相談する</Button></div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/Button.astro';
+import Card from '../../components/Card.astro';
+import SectionTitle from '../../components/SectionTitle.astro';
+
+const services = [
+  ['01', 'Webまわりの相談', 'ホームページ、SNS、予約導線、LINEなど、今どこで迷っているかを整理します。'],
+  ['02', 'ホームページ制作', 'スマホで読みやすく、必要な情報へ進みやすい静的サイトを制作します。'],
+  ['03', 'SNS運用サポート', '投稿テーマ、プロフィール、リンク導線をお店らしく整えます。'],
+  ['04', 'LINE導線づくり', '予約や問い合わせにつながるメニュー、応答、リンクを設計します。'],
+  ['05', '更新・改善サポート', '文章修正、導線改善、ちょっとした更新を継続的に支えます。'],
+];
+---
+
+<BaseLayout title="できること">
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-title__eyebrow">Service</span>
+      <h1>必要なところから、ひとつずつ。</h1>
+      <p class="lead">Web制作だけでなく、相談、整理、運用の手前まで含めてサポートします。</p>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <SectionTitle eyebrow="Menu" title="サポート内容" />
+      <div class="stack">
+        {services.map(([number, title, text]) => <Card title={title} text={text} number={number} class="service-card" />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta">
+        <p class="cta__copy">何を頼めばいいか分からなくても大丈夫です。</p>
+        <p class="lead">今の状況から必要なサポートを整理します。</p>
+        <div class="cta__action"><Button href="/contact/" variant="secondary">相談する</Button></div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
