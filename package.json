@@ -4,14 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
+    "dev": "node scripts/generate.mjs && vite",
+    "build": "node scripts/generate.mjs && vite build",
+    "preview": "vite preview"
   },
-  "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "astro": "^5.9.2",
-    "typescript": "^5.4.5"
+  "devDependencies": {
+    "vite": "latest"
   },
-  "devDependencies": {}
+  "dependencies": {}
 }

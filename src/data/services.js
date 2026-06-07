@@ -1,0 +1,50 @@
+export const services = [
+  {
+    id: 'web-consulting',
+    title: '小さなお店のWeb相談',
+    shortTitle: 'Web相談プラン',
+    href: '/services/web-consulting/',
+    price: '11,000円〜',
+    lead: 'ホームページ、SNS、LINE、予約導線など、何から整えればよいかを一緒に整理します。',
+    forWhom: 'Webまわりの優先順位が分からない個人サロン・小規模事業者さま',
+    includes: ['現状ヒアリング', 'Web導線の整理', '改善優先度の提案', '相談後メモの共有'],
+  },
+  {
+    id: 'website',
+    title: '個人サロン・小規模事業者向けホームページ制作',
+    shortTitle: 'ホームページ制作サポート',
+    href: '/services/website/',
+    price: '55,000円〜',
+    lead: 'スマホで見やすく、検索にも伝わりやすいホームページを小さく始められる形で制作します。',
+    forWhom: 'SNSだけでなく、信頼の土台になるページを持ちたい方',
+    includes: ['サイト構成設計', '文章整理', '静的サイト制作', 'SEO基本設定'],
+  },
+  {
+    id: 'sns-line',
+    title: 'SNS運用・LINE導線づくりサポート',
+    shortTitle: 'SNS・LINE導線サポート',
+    href: '/services/sns-line/',
+    price: '33,000円〜',
+    lead: 'InstagramからLINE登録、予約、問い合わせへつなげる基本導線を整えます。',
+    forWhom: '投稿はしているけれど予約や相談につながりにくい方',
+    includes: ['プロフィール改善', '投稿テーマ整理', 'LINE導線設計', 'リンク導線の見直し'],
+  },
+  {
+    id: 'ai-support',
+    title: 'AIを使ったWeb・SNS業務の整理サポート',
+    shortTitle: 'AI活用サポート',
+    href: '/services/ai-support/',
+    price: '16,500円〜',
+    lead: 'AIを使ってSNS投稿、ブログ下書き、よくある質問整理などを無理なく効率化します。',
+    forWhom: 'AIを使ってみたいけれど、何に使えばよいか分からない個人事業主さま',
+    includes: ['AI活用場面の整理', '投稿下書きの型作成', 'FAQ作成補助', '運用ルールづくり'],
+  },
+];
+
+export const priceRows = [
+  ['初回相談', '無料 または 3,300円', '相談内容と現在地を確認します。'],
+  ['Web整理相談', '11,000円〜', 'Webまわりの課題と優先順位を整理します。'],
+  ['ホームページ制作サポート', '55,000円〜', '小さく始める静的ホームページ制作です。'],
+  ['SNS・LINE導線設計', '33,000円〜', 'SNSから予約・相談までの導線を設計します。'],
+  ['月1サポート', '16,500円〜', '更新、改善、AI活用を継続的に整えます。'],
+];

@@ -1,0 +1,65 @@
+export const columnCategories = [
+  { slug: 'web-attracting', title: 'Web集客', description: '小さなお店が検索、SNS、LINEをつなげて相談や予約につなげる考え方。' },
+  { slug: 'homepage', title: 'ホームページ制作', description: '個人サロンや小規模事業者がホームページを持つ意味と準備。' },
+  { slug: 'sns-line', title: 'SNS・LINE導線', description: 'InstagramからLINE登録、予約、問い合わせへつなげる基本導線。' },
+  { slug: 'ai', title: 'AI活用', description: '個人事業主がAIを使って投稿やブログ、FAQ作成を効率化する方法。' },
+];
+
+export const columns = [
+  {
+    slug: 'salon-homepage-needed',
+    category: 'homepage',
+    title: '個人サロンにホームページは必要？SNSだけでは足りない理由',
+    description: 'SNSだけで発信している個人サロンが、ホームページを持つ意味と判断基準を整理します。',
+    date: '2026-06-07',
+    body: ['結論として、個人サロンでもホームページは信頼の土台になります。', 'SNSは日々の空気感を伝える場所、ホームページはメニュー・予約・想いを整理して残す場所です。'],
+  },
+  {
+    slug: 'first-web-flow',
+    category: 'web-attracting',
+    title: '小さなお店が最初に整えるべきWeb導線とは',
+    description: 'ホームページ、SNS、LINE、予約ページをどうつなげるか、最初に見るべき導線を紹介します。',
+    date: '2026-06-06',
+    body: ['最初に整えたいのは、見つけてもらってから問い合わせるまでの流れです。', '投稿を増やす前に、プロフィール、リンク先、予約方法が分かりやすいかを確認します。'],
+  },
+  {
+    slug: 'instagram-line-basic',
+    category: 'sns-line',
+    title: 'InstagramからLINE登録につなげる基本導線',
+    description: 'Instagramを見た人がLINE登録や予約へ進みやすくなる基本の整え方です。',
+    date: '2026-06-05',
+    body: ['InstagramからLINEへつなげるには、登録する理由と次の行動が明確であることが大切です。', 'プロフィール、ハイライト、固定投稿、リンク先を同じ目的にそろえます。'],
+  },
+  {
+    slug: 'before-website-order',
+    category: 'homepage',
+    title: 'ホームページ制作を依頼する前に準備すること',
+    description: '制作前に決めておくと進めやすい、目的、メニュー、写真、問い合わせ導線の整理です。',
+    date: '2026-06-04',
+    body: ['ホームページ制作前には、誰に何を伝えたいかを決めると進行がスムーズです。', '完璧な原稿がなくても、メニュー、対象のお客さま、予約方法が分かれば整理できます。'],
+  },
+  {
+    slug: 'web-consulting-for-solo-business',
+    category: 'web-attracting',
+    title: '個人事業主がWeb相談で聞けること',
+    description: 'ホームページ、SNS、LINE、AI活用など、Web相談で扱えるテーマを具体的にまとめます。',
+    date: '2026-06-03',
+    body: ['Web相談では、制作前の整理から運用の見直しまで幅広く相談できます。', '何を頼むか決まっていなくても、現状を見ながら優先順位を決めていきます。'],
+  },
+  {
+    slug: 'google-basic-settings',
+    category: 'homepage',
+    title: 'Google検索に出るホームページに必要な基本設定',
+    description: '検索に伝わるタイトル、説明文、サイトマップ、内部リンクなどの基本を紹介します。',
+    date: '2026-06-02',
+    body: ['Google検索に伝えるには、ページごとのタイトルと説明文、サイトマップ、内部リンクが大切です。', '小さなお店でも基本設定を整えることで、サービス内容が検索に伝わりやすくなります。'],
+  },
+  {
+    slug: 'ai-sns-posting',
+    category: 'ai',
+    title: 'AIを使ってSNS投稿を効率化する方法',
+    description: '個人事業主がAIで投稿テーマ、下書き、FAQを作るときの基本的な使い方です。',
+    date: '2026-06-01',
+    body: ['AIは投稿を丸投げする道具ではなく、考えを整理する相手として使うと便利です。', '自分のお店らしい言葉に直す前提で、テーマ出しや下書き作成に使います。'],
+  },
+];

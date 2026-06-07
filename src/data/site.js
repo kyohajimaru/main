@@ -1,0 +1,31 @@
+export const site = {
+  name: 'きょうはじまる',
+  latinName: 'kyohajimaru',
+  tagline: '小さなお店のWeb相談室',
+  url: 'https://kyohajimaru.pages.dev',
+  description:
+    'きょうはじまるは、個人サロンや小規模事業者さまのホームページ制作、SNS運用、LINE導線づくり、AI活用をわかりやすく整理するWeb相談室です。',
+  contactUrl: '/contact/',
+  heroImage: '/images/hero.png',
+  nav: [
+    ['/', 'ホーム'],
+    ['/services/', 'サービス・料金'],
+    ['/works/', '支援事例'],
+    ['/flow/', 'ご相談の流れ'],
+    ['/faq/', 'FAQ'],
+    ['/column/', 'コラム'],
+    ['/about/', '運営者について'],
+    ['/contact/', 'お問い合わせ'],
+  ],
+  keywords: [
+    '小さなお店 Web相談',
+    '個人サロン ホームページ制作',
+    '小規模事業者 Web相談',
+    '個人事業主 Web集客',
+    'サロン SNS運用',
+    'LINE導線 作り方',
+    'AI活用 個人事業主',
+    '大阪 Web相談',
+    'ホームページ SNS 何から始める',
+  ],
+};
