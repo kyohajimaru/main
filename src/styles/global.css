@@ -338,11 +338,9 @@ h3 {
 
 .hero__image {
   position: absolute;
-  inset: 0 0 auto;
-  height: 58svh;
-  min-height: 430px;
+  inset: 0;
+  height: 100%;
   overflow: hidden;
-  border-radius: 0 0 34px 34px;
 }
 
 .hero__image img {
@@ -355,7 +353,7 @@ h3 {
   position: absolute;
   inset: 0;
   content: "";
-  background: linear-gradient(180deg, rgba(251, 247, 236, 0.08), rgba(251, 247, 236, 0.9) 78%, var(--color-cream));
+  background: linear-gradient(180deg, rgba(251, 247, 236, 0.02), rgba(31, 89, 53, 0.18));
 }
 
 .hero__content {
@@ -382,7 +380,7 @@ h3 {
   max-width: 12em;
   margin-bottom: var(--space-4);
   color: var(--color-green-dark);
-  font-size: clamp(2.45rem, 12vw, 3.6rem);
+  font-size: clamp(2rem, 9.5vw, 2.85rem);
   line-height: 1.25;
 }
 
@@ -486,9 +484,5 @@ h3 {
 @media (min-width: 720px) {
   .container {
     width: min(100% - 64px, 1040px);
-  }
-
-  .hero__image {
-    height: 64vh;
   }
 }
