@@ -379,14 +379,14 @@ h3 {
 .hero h1 {
   max-width: 12em;
   margin-bottom: var(--space-4);
-  color: var(--color-green-dark);
+  color: var(--color-white);
   font-size: clamp(2rem, 9.5vw, 2.85rem);
   line-height: 1.25;
 }
 
 .hero p {
   margin-bottom: var(--space-6);
-  color: var(--color-muted);
+  color: var(--color-white);
   font-size: 0.98rem;
   line-height: 2;
 }
@@ -423,7 +423,6 @@ h3 {
 .flow-list {
   display: grid;
   gap: var(--space-3);
-  counter-reset: flow;
 }
 
 .flow-item {
