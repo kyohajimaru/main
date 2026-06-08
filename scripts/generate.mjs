@@ -83,7 +83,7 @@ function layout({ path, title, description, body, breadcrumbItems = [], structur
     <meta property="og:description" content="${esc(description)}">
     <meta property="og:url" content="${canonical}">
     <meta property="og:site_name" content="${site.name}">
-    <meta property="og:image" content="${absolute(site.heroImage)}">
+    <meta property="og:image" content="${absolute(site.logoImage)}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${esc(pageTitle)}">
     <meta name="twitter:description" content="${esc(description)}">
@@ -97,8 +97,11 @@ function layout({ path, title, description, body, breadcrumbItems = [], structur
     <header class="site-header">
       <div class="container header-inner">
         <a class="logo" href="/" aria-label="きょうはじまる トップへ">
-          <span class="logo__name">きょうはじまる</span>
-          <span class="logo__tagline">小さなお店のWeb相談室</span>
+          <img class="logo__mark" src="${site.logoSmallImage}" alt="" width="1024" height="1024">
+          <span class="logo__text">
+            <span class="logo__name">きょうはじまる</span>
+            <span class="logo__tagline">小さなお店のWeb相談室</span>
+          </span>
         </a>
         <nav class="nav" data-menu aria-label="サイト内メニュー">${nav}</nav>
         <a class="button button--primary header-cta" href="/contact/">まずは相談する</a>
@@ -113,8 +116,11 @@ function layout({ path, title, description, body, breadcrumbItems = [], structur
         <div class="footer-grid">
           <div>
             <a class="logo" href="/">
-              <span class="logo__name">きょうはじまる</span>
-              <span class="logo__tagline">小さなお店のWeb相談室</span>
+              <img class="logo__mark" src="${site.logoSmallImage}" alt="" width="1024" height="1024">
+              <span class="logo__text">
+                <span class="logo__name">きょうはじまる</span>
+                <span class="logo__tagline">小さなお店のWeb相談室</span>
+              </span>
             </a>
             <p>ホームページ制作、SNS運用、LINE導線づくり、AI活用まで。小さなお店の今日の一歩を整えます。</p>
           </div>

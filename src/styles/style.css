@@ -105,10 +105,24 @@ ol {
 }
 
 .logo {
-  display: inline-grid;
-  gap: 1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-weight: 900;
   line-height: 1.25;
+}
+
+.logo__mark {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logo__text {
+  display: grid;
+  gap: 1px;
 }
 
 .logo__name {
@@ -483,6 +497,10 @@ ol {
 .site-footer a,
 .site-footer p {
   color: rgba(255, 255, 255, 0.82);
+}
+
+.site-footer .logo__mark {
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .footer-nav {
