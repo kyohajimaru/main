@@ -21,6 +21,7 @@ function htmlInputs(dir = root, inputs = {}) {
 }
 
 export default defineConfig({
+  plugins: [],
   build: {
     rollupOptions: {
       input: htmlInputs(),
