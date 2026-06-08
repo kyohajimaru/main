@@ -126,7 +126,7 @@ function layout({ path, title, description, body, breadcrumbItems = [], structur
           </div>
           <ul class="footer-nav">${site.nav.map(([href, label]) => `<li><a href="${href}">${label}</a></li>`).join('')}<li><a href="/privacy/">プライバシーポリシー</a></li></ul>
         </div>
-        <p class="copyright">&copy; 2026 kyohajimaru</p>
+        <p class="copyright">&copy; 2026 kyo-hazimaru</p>
       </div>
     </footer>
     <script type="module" src="/src/main.js"></script>
@@ -183,7 +183,7 @@ writePage(
       <section class="hero">
         <div class="hero__image"><img src="${site.heroImage}" alt="朝の光が差し込む木漏れ日と青空"></div>
         <div class="container hero__body">
-          <span class="hero__badge">kyohajimaru / web consultation</span>
+          <span class="hero__badge">kyo-hazimaru / web consultation</span>
           <h1>小さなお店の「やりたい」を、<br>今日から形に。</h1>
           <p>ホームページ制作、SNS運用、LINE導線づくり、AI活用まで。個人サロンや小規模事業者さまのWebまわりを、わかりやすく整理します。</p>
           <div class="hero__actions">${button('/contact/', 'まずは相談する')}${button('/services/', 'サービスを見る', 'secondary')}</div>

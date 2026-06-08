@@ -1,8 +1,8 @@
 export const site = {
   name: 'きょうはじまる',
-  latinName: 'kyohajimaru',
+  latinName: 'kyo-hazimaru',
   tagline: '小さなお店のWeb相談室',
-  url: 'https://kyohajimaru.pages.dev',
+  url: 'https://kyo-hazimaru.pages.dev',
   description:
     'きょうはじまるは、個人サロンや小規模事業者さまのホームページ制作、SNS運用、LINE導線づくり、AI活用をわかりやすく整理するWeb相談室です。',
   contactUrl: '/contact/',
