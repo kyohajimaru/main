@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "kyo-hazimaru",
+  "name": "main",
   "compatibility_date": "2026-06-06",
   "assets": {
     "directory": "./dist"
