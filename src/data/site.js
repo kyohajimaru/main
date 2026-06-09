@@ -6,7 +6,7 @@ export const site = {
   description:
     'きょうはじまるは、個人サロンや小規模事業者さまのホームページ制作、SNS運用、LINE導線づくり、AI活用をわかりやすく整理するWeb相談室です。',
   contactUrl: '/contact/',
-  heroImage: '/images/hero.png',
+  heroImage: '/images/photo1.png',
   logoImage: '/images/logo.png',
   logoSmallImage: '/images/logo-small.png',
   nav: [
