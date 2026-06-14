@@ -253,7 +253,7 @@ ol {
 .hero h1 {
   max-width: 12em;
   margin-top: 14px;
-  font-size: clamp(2.15rem, 10vw, 4.5rem);
+  font-size: clamp(1.75rem, 7vw, 3.35rem);
   line-height: 1.22;
 }
 
