@@ -115,11 +115,7 @@ function layout({ path, title, description, body, breadcrumbItems = [], structur
     <header class="site-header">
       <div class="container header-inner">
         <a class="logo" href="/" aria-label="きょうはじまる トップへ">
-          <img class="logo__mark" src="${site.logoSmallImage}" alt="" width="1024" height="1024">
-          <span class="logo__text">
-            <span class="logo__name">きょうはじまる</span>
-            <span class="logo__tagline">小さなお店のWeb相談室</span>
-          </span>
+          <img class="logo__image" src="${site.logoImage}" alt="きょうはじまる" width="2000" height="2000">
         </a>
         <nav class="nav" data-menu aria-label="サイト内メニュー">${nav}</nav>
         <a class="button button--primary header-cta" href="/contact/">お問い合わせ</a>

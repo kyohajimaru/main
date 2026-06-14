@@ -143,6 +143,12 @@ body:not(.is-home) main {
   object-fit: cover;
 }
 
+.logo__image {
+  width: 116px;
+  height: 44px;
+  object-fit: contain;
+}
+
 .logo__text {
   display: grid;
   gap: 1px;
@@ -562,6 +568,11 @@ body:not(.is-home) .menu-button,
   .logo__mark {
     width: 34px;
     height: 34px;
+  }
+
+  .logo__image {
+    width: 138px;
+    height: 52px;
   }
 
   .logo__name {
