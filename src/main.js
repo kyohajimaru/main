@@ -1,5 +1,3 @@
-import './styles/style.css';
-
 const toggle = document.querySelector('[data-menu-toggle]');
 const menu = document.querySelector('[data-menu]');
 

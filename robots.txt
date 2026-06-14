@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kyo-hazimaru.pages.dev/sitemap.xml

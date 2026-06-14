@@ -1,5 +1,5 @@
 import { mkdirSync, writeFileSync, rmSync } from 'node:fs';
-import { dirname, join } from 'node:path';
+import { dirname, join, posix } from 'node:path';
 import { site } from '../src/data/site.js';
 import { services, priceRows } from '../src/data/services.js';
 import { faqs } from '../src/data/faq.js';
@@ -32,6 +32,20 @@ function breadcrumb(items) {
 
 function jsonLd(data) {
   return `<script type="application/ld+json">${JSON.stringify(data)}</script>`;
+}
+
+function relativeUrl(fromPath, target) {
+  if (!target.startsWith('/') || target.startsWith('//')) return target;
+  const fromDir = fromPath === '/' ? '' : fromPath.replace(/^\/|\/$/g, '') + '/';
+  const targetPath = target.replace(/^\//, '');
+  let relative = posix.relative(fromDir, targetPath);
+  if (!relative) relative = '.';
+  if (target.endsWith('/') && !relative.endsWith('/')) relative += '/';
+  return relative;
+}
+
+function localizeUrls(html, fromPath) {
+  return html.replace(/\b(href|src)="\/(?!\/)([^"]*)"/g, (_, attr, target) => `${attr}="${relativeUrl(fromPath, `/${target}`)}"`);
 }
 
 function layout({ path, title, description, body, breadcrumbItems = [], structuredData = [] }) {
@@ -70,7 +84,7 @@ function layout({ path, title, description, body, breadcrumbItems = [], structur
     },
   ];
 
-  return `<!doctype html>
+  const html = `<!doctype html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
@@ -90,6 +104,7 @@ function layout({ path, title, description, body, breadcrumbItems = [], structur
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/styles/style.css">
     ${[...baseLd, ...structuredData].map(jsonLd).join('\n')}
     ${crumbs}
   </head>
@@ -132,6 +147,8 @@ function layout({ path, title, description, body, breadcrumbItems = [], structur
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>`;
+
+  return localizeUrls(html, path);
 }
 
 function pageHero(title, lead, items) {
@@ -316,7 +333,12 @@ writePage('/privacy/', layout({
   body: `${pageHero('プライバシーポリシー', 'お問い合わせで取得する情報の取り扱いについて記載します。', [['/', 'ホーム'], ['/privacy/', 'プライバシーポリシー']])}<section class="section"><div class="container article-body"><h2>個人情報の利用目的</h2><p>取得した情報は、お問い合わせへの回答、サービス案内、必要な連絡のために利用します。</p><h2>第三者提供</h2><p>法令に基づく場合を除き、本人の同意なく第三者へ提供しません。</p><h2>お問い合わせ</h2><p>個人情報の取り扱いに関するお問い合わせは、サイトのお問い合わせ窓口よりご連絡ください。</p></div></section>`,
 }));
 
-writeFileSync('public/robots.txt', `User-agent: *\nAllow: /\nSitemap: ${absolute('/sitemap.xml')}\n`);
-writeFileSync('public/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map((page) => `  <url><loc>${absolute(page)}</loc></url>`).join('\n')}\n</urlset>\n`);
+const robots = `User-agent: *\nAllow: /\nSitemap: ${absolute('/sitemap.xml')}\n`;
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map((page) => `  <url><loc>${absolute(page)}</loc></url>`).join('\n')}\n</urlset>\n`;
+
+writeFileSync('robots.txt', robots);
+writeFileSync('sitemap.xml', sitemap);
+writeFileSync('public/robots.txt', robots);
+writeFileSync('public/sitemap.xml', sitemap);
 
 rmSync('dist', { recursive: true, force: true });
