@@ -15,7 +15,7 @@ const esc = (value) =>
     .replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;');
 
-const absolute = (path) => new URL(path, site.url).toString();
+const absolute = (path) => new URL(path.replace(/^\//, ''), site.url).toString();
 const button = (href, label, variant = 'primary') => `<a class="button button--${variant}" href="${href}">${label}</a>`;
 const sectionTitle = (eyebrow, title, lead = '') => `
   <div class="section-title">
@@ -40,12 +40,15 @@ function relativeUrl(fromPath, target) {
   const targetPath = target.replace(/^\//, '');
   let relative = posix.relative(fromDir, targetPath);
   if (!relative) relative = '.';
+  if (!fromDir && relative !== '.' && !relative.startsWith('.')) relative = `./${relative}`;
   if (target.endsWith('/') && !relative.endsWith('/')) relative += '/';
   return relative;
 }
 
 function localizeUrls(html, fromPath) {
-  return html.replace(/\b(href|src)="\/(?!\/)([^"]*)"/g, (_, attr, target) => `${attr}="${relativeUrl(fromPath, `/${target}`)}"`);
+  return html
+    .replace(/\b(href|src)="\.\/images\/([^"]*)"/g, (_, attr, target) => `${attr}="${relativeUrl(fromPath, `/images/${target}`)}"`)
+    .replace(/\b(href|src)="\/(?!\/)([^"]*)"/g, (_, attr, target) => `${attr}="${relativeUrl(fromPath, `/${target}`)}"`);
 }
 
 function layout({ path, title, description, body, breadcrumbItems = [], structuredData = [] }) {

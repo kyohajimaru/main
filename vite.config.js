@@ -3,7 +3,7 @@ import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 
 const root = process.cwd();
-const ignored = new Set(['dist', 'node_modules', '.git', 'assets', 'scripts', 'src', 'public']);
+const ignored = new Set(['dist', 'node_modules', '.git', 'scripts', 'src', 'public']);
 
 function htmlInputs(dir = root, inputs = {}) {
   for (const name of readdirSync(dir)) {
@@ -21,7 +21,7 @@ function htmlInputs(dir = root, inputs = {}) {
 }
 
 export default defineConfig({
-  base: './',
+  base: '/main/',
   plugins: [],
   build: {
     rollupOptions: {
