@@ -200,9 +200,8 @@ writePage(
       },
     ],
     body: `
-      <section class="hero">
-        <div class="hero__image"><img src="${site.heroImage}" alt="朝の光が差し込む木漏れ日と青空"></div>
-        <div class="container hero__body">
+      <section id="hero" class="hero" style="background-image: url('${site.heroImage}');">
+        <div class="hero-copy">
           <span class="hero__badge">kyo-hazimaru / web consultation</span>
           <h1>小さなお店の「やりたい」を、<br>今日から形に。</h1>
           <p>ホームページ制作、SNS運用、LINE導線づくり、AI活用まで。個人サロンや小規模事業者さまのWebまわりを、わかりやすく整理します。</p>

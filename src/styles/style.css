@@ -88,6 +88,7 @@ ol {
 }
 
 .site-header {
+  display: none;
   position: sticky;
   top: 0;
   z-index: 30;
@@ -204,37 +205,30 @@ ol {
   opacity: 0.82;
 }
 
-.hero {
+#hero {
   position: relative;
-  min-height: calc(100svh - 74px);
-  display: grid;
-  align-items: end;
+  height: 100svh;
   overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #fff;
 }
 
-.hero__image {
+#hero::after {
   position: absolute;
   inset: 0;
-  z-index: -2;
-}
-
-.hero__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero::after {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
   content: "";
   background: linear-gradient(180deg, rgba(38, 51, 42, 0.08), rgba(38, 51, 42, 0.62));
 }
 
-.hero__body {
-  padding: 42svh 0 56px;
+.hero-copy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: min(100% - 40px, var(--container));
+  transform: translate(-50%, -50%);
 }
 
 .hero__badge,
@@ -555,10 +549,6 @@ ol {
 
   .header-cta {
     margin-left: 4px;
-  }
-
-  .hero__body {
-    padding-bottom: 82px;
   }
 
   .section {
