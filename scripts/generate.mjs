@@ -111,7 +111,7 @@ function layout({ path, title, description, body, breadcrumbItems = [], structur
     ${[...baseLd, ...structuredData].map(jsonLd).join('\n')}
     ${crumbs}
   </head>
-  <body>
+  <body class="${path === '/' ? 'is-home' : ''}">
     <header class="site-header">
       <div class="container header-inner">
         <a class="logo" href="/" aria-label="きょうはじまる トップへ">
@@ -122,7 +122,7 @@ function layout({ path, title, description, body, breadcrumbItems = [], structur
           </span>
         </a>
         <nav class="nav" data-menu aria-label="サイト内メニュー">${nav}</nav>
-        <a class="button button--primary header-cta" href="/contact/">まずは相談する</a>
+        <a class="button button--primary header-cta" href="/contact/">お問い合わせ</a>
         <button class="menu-button" type="button" data-menu-toggle aria-expanded="false">Menu</button>
       </div>
     </header>

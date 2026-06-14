@@ -11,12 +11,10 @@ export const site = {
   logoSmallImage: './images/logo-small.png',
   nav: [
     ['/', 'ホーム'],
-    ['/services/', 'サービス・料金'],
-    ['/works/', '支援事例'],
+    ['/services/', 'サービス'],
+    ['/works/', '制作実績'],
     ['/flow/', 'ご相談の流れ'],
-    ['/faq/', 'FAQ'],
     ['/column/', 'コラム'],
-    ['/about/', '運営者について'],
     ['/contact/', 'お問い合わせ'],
   ],
   keywords: [
