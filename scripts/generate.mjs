@@ -198,7 +198,6 @@ writePage(
     body: `
       <section id="hero" class="hero" style="background-image: url('${site.heroImage}');">
         <div class="hero-copy">
-          <span class="hero__badge">kyo-hazimaru / web consultation</span>
           <h1>小さなお店の「やりたい」を、<br>今日から形に。</h1>
           <p>ホームページ制作、SNS運用、LINE導線づくり、AI活用まで。個人サロンや小規模事業者さまのWebまわりを、わかりやすく整理します。</p>
           <div class="hero__actions">${button('/contact/', 'まずは相談する')}${button('/services/', 'サービスを見る', 'secondary')}</div>
