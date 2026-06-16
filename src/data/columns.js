@@ -1,8 +1,8 @@
 export const columnCategories = [
   { slug: 'web-attracting', title: 'Web集客', description: '小さなお店が検索、SNS、LINEをつなげて相談や予約につなげる考え方。' },
-  { slug: 'homepage', title: 'ホームページ制作', description: '個人サロンや小規模事業者がホームページを持つ意味と準備。' },
+  { slug: 'homepage', title: 'ホームページ見直し', description: '個人サロンや小規模事業者がホームページを見直すときの考え方。' },
   { slug: 'sns-line', title: 'SNS・LINE導線', description: 'InstagramからLINE登録、予約、問い合わせへつなげる基本導線。' },
-  { slug: 'ai', title: 'AI活用', description: '個人事業主がAIを使って投稿やブログ、FAQ作成を効率化する方法。' },
+  { slug: 'ai', title: '投稿・FAQ整理', description: '投稿テーマやよくある質問を、お店らしい言葉で整理する方法。' },
 ];
 
 export const columns = [
@@ -33,16 +33,16 @@ export const columns = [
   {
     slug: 'before-website-order',
     category: 'homepage',
-    title: 'ホームページ制作を依頼する前に準備すること',
-    description: '制作前に決めておくと進めやすい、目的、メニュー、写真、問い合わせ導線の整理です。',
+    title: 'ホームページを見直す前に整理すること',
+    description: '見直し前に確認しておくと進めやすい、目的、メニュー、写真、問い合わせ導線の整理です。',
     date: '2026-06-04',
-    body: ['ホームページ制作前には、誰に何を伝えたいかを決めると進行がスムーズです。', '完璧な原稿がなくても、メニュー、対象のお客さま、予約方法が分かれば整理できます。'],
+    body: ['ホームページを見直す前には、誰に何を伝えたいかを決めると進行がスムーズです。', '完璧な原稿がなくても、メニュー、対象のお客さま、予約方法が分かれば整理できます。'],
   },
   {
     slug: 'web-consulting-for-solo-business',
     category: 'web-attracting',
     title: '個人事業主がWeb相談で聞けること',
-    description: 'ホームページ、SNS、LINE、AI活用など、Web相談で扱えるテーマを具体的にまとめます。',
+    description: 'ホームページ、Instagram、LINE、予約導線など、Web相談で扱えるテーマを具体的にまとめます。',
     date: '2026-06-03',
     body: ['Web相談では、制作前の整理から運用の見直しまで幅広く相談できます。', '何を頼むか決まっていなくても、現状を見ながら優先順位を決めていきます。'],
   },
@@ -57,9 +57,9 @@ export const columns = [
   {
     slug: 'ai-sns-posting',
     category: 'ai',
-    title: 'AIを使ってSNS投稿を効率化する方法',
-    description: '個人事業主がAIで投稿テーマ、下書き、FAQを作るときの基本的な使い方です。',
+    title: 'SNS投稿とFAQを整理する方法',
+    description: '個人事業主が投稿テーマ、下書き、FAQを整理するときの基本的な考え方です。',
     date: '2026-06-01',
-    body: ['AIは投稿を丸投げする道具ではなく、考えを整理する相手として使うと便利です。', '自分のお店らしい言葉に直す前提で、テーマ出しや下書き作成に使います。'],
+    body: ['投稿やFAQは、まずお客さまが知りたいことを並べると整理しやすくなります。', '自分のお店らしい言葉に直す前提で、テーマ出しや下書きを進めます。'],
   },
 ];

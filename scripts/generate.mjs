@@ -136,7 +136,7 @@ function layout({ path, title, description, body, breadcrumbItems = [], structur
                 <span class="logo__tagline">小さなお店のWeb相談室</span>
               </span>
             </a>
-            <p>ホームページ制作、SNS運用、LINE導線づくり、AI活用まで。小さなお店の今日の一歩を整えます。</p>
+            <p>ホームページやInstagram、LINE、予約導線を見直し、小さなお店の今やるべきことを整理します。</p>
           </div>
           <ul class="footer-nav">${site.nav.map(([href, label]) => `<li><a href="${href}">${label}</a></li>`).join('')}<li><a href="/privacy/">プライバシーポリシー</a></li></ul>
         </div>
@@ -183,7 +183,7 @@ writePage(
         name: '小さなお店のWeb相談室',
         provider: { '@type': 'Organization', name: site.name },
         areaServed: ['大阪', '日本全国', 'オンライン'],
-        serviceType: ['小さなお店 Web相談', '個人サロン ホームページ制作', 'SNS運用', 'LINE導線づくり', 'AI活用サポート'],
+        serviceType: ['小さなお店 Web診断レポート', 'ホームページ診断', 'Instagram改善', 'LINE・予約導線の見直し'],
       },
       {
         '@context': 'https://schema.org',
@@ -198,36 +198,41 @@ writePage(
     body: `
       <section id="hero" class="hero" style="background-image: url('${site.heroImage}');">
         <div class="hero-copy">
-          <h1>小さなお店の「やりたい」を、<br>今日から形に。</h1>
-          <p>ホームページ制作、SNS運用、LINE導線づくり、AI活用まで。個人サロンや小規模事業者さまのWebまわりを、わかりやすく整理します。</p>
-          <div class="hero__actions">${button('/contact/', 'まずは相談する')}${button('/services/', 'サービスを見る', 'secondary')}</div>
+          <h1>小さなお店の<br>Web相談室</h1>
+          <p>ホームページやInstagram、なんとなく動かしていませんか？<br>お店のWebまわりを見直して、今やるべきことをレポートにまとめます。</p>
+          <div class="hero__actions">${button('/services/', 'Web診断レポートを見る')}${button('/contact/', '相談してみる', 'secondary')}</div>
         </div>
       </section>
-      <section class="section"><div class="container">${sectionTitle('About', 'きょうはじまるとは', '個人サロンや小さなお店の「何から始めたらいい？」に寄り添うWeb相談室です。')}<div class="grid grid--2"><div class="card"><h3>今日の一歩に分けて考える</h3><p>大きな制作の前に、今あるSNS、ホームページ、LINE、予約導線を見ながら、最初に整えることを決めます。</p></div><div class="card"><h3>あしたはれそらから続く安心感</h3><p>税理士・社労士事務所「あしたはれそら」のWeb制作・運用経験をもとに、小さなお店向けに分かりやすく展開します。</p></div></div></div></section>
-      <section class="section section--soft"><div class="container">${sectionTitle('Trouble', 'こんなお悩みありませんか？')}<div class="grid grid--3">${['ホームページとSNS、どちらから始めるべきか分からない','Instagramから予約やLINE登録につながらない','AIを使いたいけれど業務にどう入れるか分からない','個人サロンらしい信頼感のあるサイトを持ちたい','検索に出るための基本設定が不安','制作会社に頼む前に整理だけ相談したい'].map((text) => `<div class="card"><h3>${text}</h3></div>`).join('')}</div></div></section>
-      <section class="section"><div class="container">${sectionTitle('Service', 'できること', '小さなお店・個人サロン・個人事業主向けに、相談から制作、運用整理まで対応します。')}<div class="grid grid--2">${serviceCards}</div></div></section>
-      <section class="section section--soft"><div class="container">${sectionTitle('Reason', '選ばれる理由')}<div class="grid grid--3"><div class="card"><h3>専門用語をほどく</h3><p>SEO、SNS、LINE、AIをお店の言葉に置き換えて説明します。</p></div><div class="card"><h3>小さく始められる</h3><p>全部を作る前に、今必要な範囲だけを見極めます。</p></div><div class="card"><h3>系列ブランドの安心感</h3><p>あしたはれそらの誠実な相談姿勢を引き継ぎ、芽吹きや朝の光の世界観で届けます。</p></div></div></div></section>
+      <section class="section"><div class="container">${sectionTitle('About', 'きょうはじまるとは', '個人サロンや小さなお店のためのWeb相談室です。')}<div class="grid grid--2"><div class="card"><h3>まずは現状を整理する</h3><p>ホームページ、Instagram、LINE、予約導線など、Webまわりをまとめて見直し、今のお店に必要な改善ポイントをレポートにしてお届けします。</p></div><div class="card"><h3>いきなり制作しない相談室</h3><p>制作や運用を始める前に、何から直せばよいかをやさしく整理します。必要な方のみ、オンライン相談や追加サポートも選べます。</p></div></div></div></section>
+      <section class="section section--soft"><div class="container">${sectionTitle('Trouble', 'こんなお悩みありませんか？')}<div class="grid grid--3">${['何から直せばいいかわからない','SNSを頑張っているけど予約につながらない','ホームページを作ったまま放置している','LINEや予約導線を整えたい','Instagramの見え方に自信がない','制作会社に頼む前に整理だけ相談したい'].map((text) => `<div class="card"><h3>${text}</h3></div>`).join('')}</div></div></section>
+      <section class="section"><div class="container">${sectionTitle('Service', 'Web診断レポート', '小さなお店・個人サロン・ひとり事業主向けに、まずはWebまわりの現状と改善ポイントを整理します。')}<div class="grid grid--2">${serviceCards}</div></div></section>
+      <section class="section section--soft"><div class="container">${sectionTitle('Reason', '大切にしていること')}<div class="grid grid--3"><div class="card"><h3>お店の言葉で整理する</h3><p>専門用語を並べず、今のお店に必要な見直しポイントとしてお伝えします。</p></div><div class="card"><h3>優先順位がわかる</h3><p>全部を一度に変えるのではなく、先に直すところから順番に整理します。</p></div><div class="card"><h3>必要な分だけ相談できる</h3><p>基本はレポート納品。迷う部分だけオンライン相談で一緒に確認できます。</p></div></div></div></section>
       <section class="section"><div class="container">${sectionTitle('Price', 'サービス・料金', '料金は仮の目安です。内容により変動します。')}<div class="price-table">${priceRows.map((row) => `<div class="price-row"><strong>${row[0]}</strong><span>${row[1]}</span><p>${row[2]}</p></div>`).join('')}</div><div class="actions">${button('/services/', '詳しく見る', 'secondary')}</div></div></section>
-      <section class="section section--soft"><div class="container">${sectionTitle('Flow', 'ご相談の流れ')}<div class="grid grid--2 flow-list">${['ヒアリング','現状整理とご提案','お見積り・ご契約','制作・運用サポート'].map((title) => `<div class="card flow-item"><h3>${title}</h3><p>現在の状況を確認し、必要な順番で進めます。</p></div>`).join('')}</div></div></section>
-      <section class="section"><div class="container">${sectionTitle('Works', '支援事例')}<div class="grid grid--2">${works.map((work) => `<a class="card" href="/works/"><span class="tag">${work.category}</span><h3>${work.title}</h3><p>${work.before}</p></a>`).join('')}</div></div></section>
+      <section class="section section--soft"><div class="container">${sectionTitle('Flow', 'ご相談の流れ')}<div class="grid grid--2 flow-list">${[
+        ['お問い合わせ', '気になることや現在のお悩みを送ってください。'],
+        ['Webまわりの確認', 'ホームページ、Instagram、LINE、予約ページなどを確認します。'],
+        ['診断レポート作成', '改善ポイントや優先順位をレポートにまとめます。'],
+        ['レポート納品', 'PDFまたはテキスト形式でお渡しします。'],
+      ].map(([title, text]) => `<div class="card flow-item"><h3>${title}</h3><p>${text}</p></div>`).join('')}</div></div></section>
+      <section class="section"><div class="container">${sectionTitle('Works', 'できること・支援領域')}<div class="grid grid--2">${works.map((work) => `<a class="card" href="/works/"><span class="tag">${work.category}</span><h3>${work.title}</h3><p>${work.scope}</p></a>`).join('')}</div></div></section>
       <section class="section section--soft"><div class="container">${sectionTitle('FAQ', 'よくある質問')}<div class="faq-list">${faqs.slice(0, 4).map((faq) => `<article class="faq-item"><h3>${faq.q}</h3><p>${faq.a}</p></article>`).join('')}</div><div class="actions">${button('/faq/', 'FAQを見る', 'secondary')}</div></div></section>
       <section class="section"><div class="container">${sectionTitle('Column', 'コラム')}<div class="grid grid--3">${columnCards}</div></div></section>
-      <section class="section"><div class="container"><div class="cta"><h2>まだふわっとした段階でも大丈夫です。</h2><p>「ホームページ SNS 何から始める？」という段階から、一緒に整理します。</p><div class="actions">${button('/contact/', 'まずは相談する', 'secondary')}</div></div></div></section>`,
+      <section class="section"><div class="container"><div class="cta"><h2>今のままでいいのかな？と思ったら。</h2><p>ホームページやInstagramの状態を、まずは一緒に整理しましょう。</p><div class="actions">${button('/contact/', 'Web診断を相談する', 'secondary')}</div></div></div></section>`,
   }),
 );
 
 writePage('/services/', layout({
   path: '/services/',
   title: 'サービス・料金',
-  description: '小さなお店のWeb相談、ホームページ制作、SNS・LINE導線、AI活用サポートのサービスと料金目安です。',
+  description: '小さなお店のWeb診断レポート、オンライン相談オプション、必要に応じたWebまわりのサポートの料金目安です。',
   breadcrumbItems: [['/', 'ホーム'], ['/services/', 'サービス・料金']],
   structuredData: services.map((service) => ({ '@context': 'https://schema.org', '@type': 'Service', name: service.title, description: service.lead, provider: { '@type': 'Organization', name: site.name }, offers: { '@type': 'Offer', priceCurrency: 'JPY', price: service.price.replace(/\D/g, '') || undefined } })),
-  body: `${pageHero('サービス・料金', '相談だけでも、制作まででも。小さなお店に必要なWebまわりを、今の状況に合わせて整えます。', [['/', 'ホーム'], ['/services/', 'サービス・料金']])}
-  <section class="section"><div class="container">${sectionTitle('Service', 'サービス一覧')}<div class="grid grid--2">${serviceCards}</div></div></section>
+  body: `${pageHero('サービス・料金', 'ベースはWeb診断レポートです。必要な方のみ、オンライン相談や追加サポートを選べます。', [['/', 'ホーム'], ['/services/', 'サービス・料金']])}
+  <section class="section"><div class="container">${sectionTitle('Service', '小さなお店のWeb診断レポート', 'ホームページやInstagram、LINE、予約導線を確認し、今やるべきことを整理します。')}<div class="grid grid--2">${serviceCards}</div></div></section>
   <section class="section section--soft"><div class="container">${sectionTitle('Price', '料金目安', '料金は仮の目安です。内容により変動します。')}<div class="price-table">${priceRows.map((row) => `<div class="price-row"><strong>${row[0]}</strong><span>${row[1]}</span><p>${row[2]}</p></div>`).join('')}</div></div></section>
-  <section class="section"><div class="container">${sectionTitle('Fit', 'どのプランが合うか')}<div class="grid grid--3"><div class="card"><h3>迷っている方</h3><p>まずはWeb相談プランで整理します。</p></div><div class="card"><h3>信頼の土台がほしい方</h3><p>ホームページ制作サポートが向いています。</p></div><div class="card"><h3>発信を予約につなげたい方</h3><p>SNS・LINE導線サポートで流れを整えます。</p></div></div></div></section>
+  <section class="section"><div class="container">${sectionTitle('Fit', 'どの内容が合うか')}<div class="grid grid--3"><div class="card"><h3>まず確認したい方</h3><p>ライト診断レポートで、気になる部分を小さく見直します。</p></div><div class="card"><h3>全体を整えたい方</h3><p>しっかり診断レポートで、Webまわりをまとめて確認します。</p></div><div class="card"><h3>一緒に整理したい方</h3><p>オンライン相談オプションで、レポートを見ながら進め方を確認します。</p></div></div></div></section>
   <section class="section section--soft"><div class="container">${sectionTitle('FAQ', 'サービスのFAQ')}<div class="faq-list">${faqHtml}</div></div></section>
-  <section class="section"><div class="container"><div class="cta"><h2>必要なプランを一緒に選びます。</h2><p>まだ決まっていない状態でご相談ください。</p><div class="actions">${button('/contact/', '相談する', 'secondary')}</div></div></div></section>`,
+  <section class="section"><div class="container"><div class="cta"><h2>今のWebまわりを、まずは整理します。</h2><p>ホームページやInstagram、今のままでいいのかな？と思ったらお気軽にご相談ください。</p><div class="actions">${button('/contact/', 'Web診断を相談する', 'secondary')}</div></div></div></section>`,
 }));
 
 for (const service of services) {
@@ -239,7 +244,7 @@ for (const service of services) {
     structuredData: [{ '@context': 'https://schema.org', '@type': 'Service', name: service.title, description: service.lead, provider: { '@type': 'Organization', name: site.name } }],
     body: `${pageHero(service.title, service.lead, [['/', 'ホーム'], ['/services/', 'サービス・料金'], [service.href, service.title]])}
     <section class="section"><div class="container"><div class="grid grid--2"><div class="card"><h2>向いている人</h2><p>${service.forWhom}</p></div><div class="card"><h2>料金目安</h2><p>${service.price}<br>内容により変動します。</p></div></div></div></section>
-    <section class="section section--soft"><div class="container">${sectionTitle('Support', '相談・制作で行うこと')}<ul class="grid grid--2">${service.includes.map((item) => `<li class="card"><h3>${item}</h3><p>小さなお店の運用に合わせて、無理なく進めます。</p></li>`).join('')}</ul></div></section>
+    <section class="section section--soft"><div class="container">${sectionTitle('Support', '確認すること')}<ul class="grid grid--2">${service.includes.map((item) => `<li class="card"><h3>${item}</h3><p>小さなお店の今の状況に合わせて、分かりやすく整理します。</p></li>`).join('')}</ul></div></section>
     <section class="section"><div class="container"><div class="cta"><h2>${service.shortTitle}について相談する</h2><p>必要な範囲を一緒に整理します。</p><div class="actions">${button('/contact/', '問い合わせる', 'secondary')}</div></div></div></section>`,
   }));
 }
@@ -247,16 +252,22 @@ for (const service of services) {
 writePage('/flow/', layout({
   path: '/flow/',
   title: 'ご相談の流れ',
-  description: 'きょうはじまるへの初回相談から、Webまわりの整理、制作・運用サポートまでの流れです。',
+  description: '小さなお店のWeb診断レポートのお問い合わせから、Webまわりの確認、レポート納品、オンライン相談までの流れです。',
   breadcrumbItems: [['/', 'ホーム'], ['/flow/', 'ご相談の流れ']],
-  body: `${pageHero('ご相談の流れ', 'はじめてのご相談からサポート開始まで、無理のない順番で進めます。', [['/', 'ホーム'], ['/flow/', 'ご相談の流れ']])}
-  <section class="section"><div class="container"><div class="grid grid--2 flow-list">${['ヒアリング','現状整理とご提案','お見積り・ご契約','制作・運用サポート','継続フォロー'].map((title) => `<div class="card flow-item"><h3>${title}</h3><p>今の状況に合わせて、次に必要なことを確認します。</p></div>`).join('')}</div></div></section>`,
+  body: `${pageHero('ご相談の流れ', 'お問い合わせからレポート納品まで、無理のない順番で進めます。', [['/', 'ホーム'], ['/flow/', 'ご相談の流れ']])}
+  <section class="section"><div class="container"><div class="grid grid--2 flow-list">${[
+    ['お問い合わせ', '気になることや現在のお悩みを送ってください。'],
+    ['Webまわりの確認', 'ホームページ、Instagram、LINE、予約ページなどを確認します。'],
+    ['診断レポート作成', '改善ポイントや優先順位をレポートにまとめます。'],
+    ['レポート納品', 'PDFまたはテキスト形式でお渡しします。'],
+    ['必要な方のみオンライン相談', 'レポートを見ながら、今後の進め方を一緒に整理します。'],
+  ].map(([title, text]) => `<div class="card flow-item"><h3>${title}</h3><p>${text}</p></div>`).join('')}</div></div></section>`,
 }));
 
 writePage('/faq/', layout({
   path: '/faq/',
   title: 'よくある質問',
-  description: '小さなお店のWeb相談、ホームページ制作、SNS・LINE導線、AI活用についてのよくある質問です。',
+  description: '小さなお店のWeb診断レポート、オンライン相談、ホームページやInstagramの見直しについてのよくある質問です。',
   breadcrumbItems: [['/', 'ホーム'], ['/faq/', 'よくある質問']],
   structuredData: [{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((faq) => ({ '@type': 'Question', name: faq.q, acceptedAnswer: { '@type': 'Answer', text: faq.a } })) }],
   body: `${pageHero('よくある質問', '相談前の不安を減らせるよう、よくいただく質問をまとめました。', [['/', 'ホーム'], ['/faq/', 'よくある質問']])}<section class="section"><div class="container"><div class="faq-list">${faqHtml}</div></div></section>`,
@@ -265,27 +276,27 @@ writePage('/faq/', layout({
 writePage('/about/', layout({
   path: '/about/',
   title: '運営者について',
-  description: 'きょうはじまるを作った理由、あしたはれそらとのつながり、Web制作・運用経験について紹介します。',
+  description: 'きょうはじまるを作った理由、Web診断レポートで大切にしていること、支援できる領域について紹介します。',
   breadcrumbItems: [['/', 'ホーム'], ['/about/', '運営者について']],
-  body: `${pageHero('運営者について', '税理士・社労士事務所「あしたはれそら」のWeb制作・運用経験をもとに、小さなお店のWeb相談室として展開しています。', [['/', 'ホーム'], ['/about/', '運営者について']])}
-  <section class="section"><div class="container"><div class="grid grid--2"><div class="card"><h2>作った理由</h2><p>小さなお店や個人事業主の方が、ホームページ、SNS、LINE、AIで迷ったときに、制作前から相談できる場所を作りたいと考えました。</p></div><div class="card"><h2>あしたはれそらとのつながり</h2><p>あしたはれそらの安心感や誠実さを受け継ぎながら、きょうはじまるでは「芽吹き・朝・今日の一歩」をテーマにWebまわりを支えます。</p></div></div></div></section>
-  <section class="section section--soft"><div class="container">${sectionTitle('Profile', '運営者プロフィール')}<div class="grid grid--3">${['Web制作・運用','SNS・LINE導線整理','AI活用サポート'].map((title) => `<div class="card"><h3>${title}</h3><p>小さなお店の現場に合わせて、分かりやすく整理します。</p></div>`).join('')}</div></div></section>
-  <section class="section"><div class="container"><div class="cta"><h2>あなたのお店の今日の一歩を、一緒に整理します。</h2><div class="actions">${button('/contact/', '相談する', 'secondary')}</div></div></div></section>`,
+  body: `${pageHero('運営者について', '個人サロンや小さなお店が、Webまわりをやさしく見直せる相談室です。', [['/', 'ホーム'], ['/about/', '運営者について']])}
+  <section class="section"><div class="container"><div class="grid grid--2"><div class="card"><h2>作った理由</h2><p>「何から直せばいいかわからない」という状態のまま、いきなり制作や運用を始めなくて済むように、まず現状を整理する場所を作りました。</p></div><div class="card"><h2>大切にしていること</h2><p>ホームページ、Instagram、LINE、予約導線を、お店の規模や今の負担に合わせて見直します。無理に大きな施策へ進めず、必要な一歩を一緒に考えます。</p></div></div></div></section>
+  <section class="section section--soft"><div class="container">${sectionTitle('Profile', '支援できる領域')}<div class="grid grid--3">${['Webサイト制作経験','SNS運用経験','小規模事業者向けWeb導線の整理'].map((title) => `<div class="card"><h3>${title}</h3><p>診断レポートの中で、今のお店に必要な見直しポイントとして整理します。</p></div>`).join('')}</div></div></section>
+  <section class="section"><div class="container"><div class="cta"><h2>小さなお店のWebまわりを、一緒に整理します。</h2><div class="actions">${button('/contact/', 'Web診断を相談する', 'secondary')}</div></div></div></section>`,
 }));
 
 writePage('/works/', layout({
   path: '/works/',
-  title: '支援事例',
-  description: 'きょうはじまるのモニター事例、制作実績、相談事例、改善事例を掲載します。',
-  breadcrumbItems: [['/', 'ホーム'], ['/works/', '支援事例']],
-  body: `${pageHero('支援事例', '実績が少ない初期段階でも、相談内容と行ったことが伝わる形式で掲載します。', [['/', 'ホーム'], ['/works/', '支援事例']])}
+  title: '支援領域',
+  description: 'Webサイト制作経験、SNS運用経験、小規模事業者向けWeb導線の整理など、きょうはじまるがサポートできる領域です。',
+  breadcrumbItems: [['/', 'ホーム'], ['/works/', '支援領域']],
+  body: `${pageHero('支援領域', '診断レポートで確認できること、必要に応じてサポートできる領域をまとめています。', [['/', 'ホーム'], ['/works/', '支援領域']])}
   <section class="section"><div class="container"><div class="grid grid--2">${works.map((work) => `<article class="card"><span class="tag">${work.category}</span><h2>${work.title}</h2><p><strong>業種:</strong> ${work.industry}</p><p><strong>相談前の悩み:</strong> ${work.before}</p><p><strong>行ったこと:</strong> ${work.action}</p><p><strong>結果:</strong> ${work.result}</p><p><strong>担当範囲:</strong> ${work.scope}</p><p><strong>お客様の声:</strong> ${work.voice}</p></article>`).join('')}</div></div></section>`,
 }));
 
 writePage('/column/', layout({
   path: '/column/',
   title: 'コラム一覧',
-  description: '個人サロンや小さなお店向けに、Web集客、ホームページ制作、SNS・LINE導線、AI活用のコラムを掲載します。',
+  description: '個人サロンや小さなお店向けに、Web集客、ホームページ見直し、SNS・LINE導線のコラムを掲載します。',
   breadcrumbItems: [['/', 'ホーム'], ['/column/', 'コラム']],
   body: `${pageHero('コラム一覧', '相談前に読める、Webまわりの小さなヒントです。', [['/', 'ホーム'], ['/column/', 'コラム']])}
   <section class="section"><div class="container">${sectionTitle('Category', 'カテゴリ')}<div class="grid grid--2">${columnCategories.map((cat) => `<a class="card" href="/column/${cat.slug}/"><h2>${cat.title}</h2><p>${cat.description}</p></a>`).join('')}</div></div></section>
@@ -317,9 +328,9 @@ for (const post of columns) {
 writePage('/contact/', layout({
   path: '/contact/',
   title: 'お問い合わせ',
-  description: '小さなお店のWeb相談、ホームページ制作、SNS・LINE導線、AI活用についてのお問い合わせページです。',
+  description: '小さなお店のWeb診断レポート、オンライン相談オプションについてのお問い合わせページです。',
   breadcrumbItems: [['/', 'ホーム'], ['/contact/', 'お問い合わせ']],
-  body: `${pageHero('お問い合わせ', 'まだふわっとした段階でも大丈夫です。何から整えるか一緒に考えます。', [['/', 'ホーム'], ['/contact/', 'お問い合わせ']])}<section class="section"><div class="container"><div class="card"><h2>お問い合わせ方法</h2><p>フォームは準備中です。公開時はメールフォームまたはLINE相談導線を設置できます。</p><div class="actions">${button('mailto:hello@example.com', 'メールで相談する')}</div></div></div></section>`,
+  body: `${pageHero('お問い合わせ', 'ホームページやInstagram、今のままでいいのかな？と思ったら、まずはお気軽にご相談ください。', [['/', 'ホーム'], ['/contact/', 'お問い合わせ']])}<section class="section"><div class="container"><div class="card"><h2>小さなお店のWebまわりを一緒に整理します。</h2><p>フォームは準備中です。公開時はメールフォームまたはLINE相談導線を設置できます。</p><div class="actions">${button('mailto:hello@example.com', 'まずは問い合わせる')}</div></div></div></section>`,
 }));
 
 writePage('/privacy/', layout({
