@@ -132,8 +132,8 @@ body:not(.is-home) main {
 }
 
 .logo__image {
-  width: 116px;
-  height: 44px;
+  width: 142px;
+  height: 54px;
   object-fit: contain;
 }
 
@@ -558,8 +558,8 @@ body:not(.is-home) .menu-button,
   }
 
   .logo__image {
-    width: 138px;
-    height: 52px;
+    width: 176px;
+    height: 64px;
   }
 
   .logo__name {
